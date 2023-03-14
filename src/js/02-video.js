@@ -12,7 +12,7 @@ function onStart ({seconds}) {
 localStorage.setItem(currentTime, seconds);
 }
 
-player.setCurrentTime(localStorage.getItem(currentTime));
+player.setCurrentTime(localStorage.getItem(currentTime)||0);
 
 
 

@@ -19,23 +19,9 @@ const items = galleryItems.map(item => {
 const galleryBox = document.querySelector('.gallery');
 galleryBox.innerHTML = items;
 
-galleryBox.addEventListener('click', onLinkClick);
 
-function onLinkClick(e) {
-  if (e.target.nodeName !== 'IMG'){
-    return
-  };
-    e.preventDefault();
-	const lightbox = new SimpleLightbox('.gallery a', { caption: true, captionSelector: 'img[alt]', captionType: 'attr', captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250 });
+	const lightbox = new SimpleLightbox('.gallery a', { caption: true, 
+    captionSelector: 'img[alt]', captionType: 'attr', captionsData: 
+    'alt', captionPosition: 'bottom', captionDelay: 250 });
 
-  galleryBox.addEventListener('keydown', onGalleryBoxClose);
-
-function onGalleryBoxClose (e) {
-if (e.key === 'Escape') {
-  galleryBox.removeEventListener('keydown', onGalleryBoxClose);
-  lightbox.close(); 
-} 
-}
-}
-
-
+    console.log(galleryItems);
